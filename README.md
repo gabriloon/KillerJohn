@@ -1,5 +1,5 @@
 # KillerJohn
-It's kind of a horror game, and it's a game that still needs to be fixed.<br>
+It's kind of a Shooting game, and it's a game that still needs to be fixed.<br>
 This repository contains:<br>
 	1.Contains the code of the project.<br>
 	2.Background of the project.<br>
@@ -14,12 +14,10 @@ This repository contains:<br>
 
 
 ## BackGround
-A player woke up in a dark space, a strange mansion that you can even look around.
-Upon entering the mansion, the mansion was a strange place to display ghost stories.<br>
-![ST0](https://user-images.githubusercontent.com/33173322/116456157-e416dc00-a89c-11eb-86fd-093f43319fed.png)<br>
-![ST5](https://user-images.githubusercontent.com/33173322/116454880-66060580-a89b-11eb-8812-fb1054af893d.png)<br>
-![ST7](https://user-images.githubusercontent.com/33173322/116456432-3eb03800-a89d-11eb-88fb-3e4c1a2e4600.png)<br>
-![ST6_2](https://user-images.githubusercontent.com/33173322/116456667-7919d500-a89d-11eb-8fc3-1a300f5beecf.png)<br>
+version_0.1 : As a killer, the player must kill the target person in the mart.<br>
+![K1](https://user-images.githubusercontent.com/33173322/119335051-c9325e80-bcc6-11eb-9a8f-e4a8d80533b8.PNG)<br>
+![K2](https://user-images.githubusercontent.com/33173322/119335078-d5b6b700-bcc6-11eb-9dc1-f15928cf1c7b.PNG)<br>
+
 ## Description
 Unzip the **Scripts.zip** folder and go into the folder.<br>
 Several *folders* will appear.<br>
