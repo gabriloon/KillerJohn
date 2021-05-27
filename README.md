@@ -25,7 +25,7 @@ The contents of each *folder* are as follows.<br>
 *BehaviorTree Forder*: In the KillerJohn project, we used Behavior Tree, BlackBoard, for the AI of enemy characters.<br>
 For more detailed tasks I want, I have created a Service, Task, etc. in the Behavior Tree myself, and the related codes are included.<br>
 *Character*: Contains code related to the character and enemy characters controlled by the user.<br>
-*Gamemode*: Code related to Gamemode in the KillerJohn project..<br>
+*Gamemode*: Code related to Gamemode in the KillerJohn project.<br>
 
 ## RelatedEfforts
 Main Engine: [Unreal engine](https://www.unrealengine.com/ko/)<br>
