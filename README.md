@@ -19,14 +19,13 @@ version_0.1 : As a killer, the player must kill the target person in the mart.<b
 ![K2](https://user-images.githubusercontent.com/33173322/119335078-d5b6b700-bcc6-11eb-9dc1-f15928cf1c7b.PNG)<br>
 
 ## Description
-Unzip the **Scripts.zip** folder and go into the folder.<br>
-Several *folders* will appear.<br>
 The contents of each *folder* are as follows.<br>
-*LobbyScript*: Script related to the starting stage.<br>
-*Stage1Script*: Script related to the first ghost story.<br>
-*Stage2Script*: Script related to the second ghost story.<br>
-*Player*: Script for functions related to Player.<br>
-*NotUse*: Codes that have been created but are not used in the project.<br>
+*AI Forder*: Contains code related to NPCs moving around the map.<br>
+*Actor Forder*: Contains code for the total objects and special functions of the objects placed around the map.<br>
+*BehaviorTree Forder*: In the KillerJohn project, we used Behavior Tree, BlackBoard, for the AI of enemy characters.<br>
+For more detailed tasks I want, I have created a Service, Task, etc. in the Behavior Tree myself, and the related codes are included.<br>
+*Character*: Contains code related to the character and enemy characters controlled by the user.<br>
+*Gamemode*: Code related to Gamemode in the KillerJohn project..<br>
 
 ## RelatedEfforts
 Main Engine: [Unreal engine](https://www.unrealengine.com/ko/)<br>
