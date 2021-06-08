@@ -3,6 +3,7 @@
 
 #include "EmGameModeBase.h"
 #include "EngineUtils.h"
+#include "ShooterCharacter.h"
 #include "GameFramework/Controller.h"
 #include "AI_ShooterController.h"
 #include "Misc/OutputDeviceNull.h"
@@ -10,11 +11,21 @@
 void AEmGameModeBase::PawnKilled(APawn* PawnKilled) //ShooterPlayerCharacter.cpp 의 TakeDamage 함수에서 IsDead 가 True 일 경우 호출
 {
     Super::PawnKilled(PawnKilled);
+    
+    UE_LOG(LogTemp,Warning,TEXT("Kill"));//Stage Test
+    KillClear++;//Stage Test
+
 
    APlayerController* PlayerController = Cast<APlayerController>(PawnKilled->GetController());//캐릭터의 Controller 호출 및 설정
     if(PlayerController!=nullptr){//죽은게 플레이어 일경우
+        KillClear--;
        EndGame(false);
     }
+
+    if(KillClear==5){//Stage Test
+EndGame(true);//모든 적 캐릭터가 죽었을 경우에
+}
+
 for(AAI_ShooterController* Controller:TActorRange<AAI_ShooterController>(GetWorld()))//Controller 의 수,즉 적 캐릭터의 수 만큼 반복
 {
 if(!Controller->IsDead()){//적 캐릭터가 전부 죽을때까지 return 을 통해 끝내지 않는다.
@@ -22,7 +33,11 @@ if(!Controller->IsDead()){//적 캐릭터가 전부 죽을때까지 return 을 �
 }
 }
 
-    EndGame(true);//모든 적 캐릭터가 죽었을 경우에
+}
+
+int AEmGameModeBase::StageInfo() const //Stage Test
+{
+    return KillClear;
 }
 
 

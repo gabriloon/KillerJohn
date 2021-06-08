@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "KillerJohnGameModeBase.h"
+#include "ShooterCharacter.h"
 #include "EmGameModeBase.generated.h"
 
 /**
@@ -16,5 +17,14 @@ class KILLERJOHN_API AEmGameModeBase : public AKillerJohnGameModeBase
 	
 public:
  virtual void PawnKilled(APawn* PawnKilled)override;
+
+
+	UFUNCTION(BlueprintPure)
+	int StageInfo() const; //플레이어가 죽인 적의 수를 위젯에 반영하기 위해서 Get 으로 수 리턴
+
  void EndGame(bool IsPlayerWin);
+
+UPROPERTY(VisibleAnywhere)
+int KillClear=0;
+
 };
