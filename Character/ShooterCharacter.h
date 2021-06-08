@@ -46,6 +46,9 @@ public:
 	float GetHealthPercent() const; //현재 HP UI 에 반영하기 위한 함수
 
 	UFUNCTION(BlueprintCallable)
+	void AddCurrentBullet();//총알 먹었을때 현재 총알 개수 증가
+
+	UFUNCTION(BlueprintCallable)
 	void WeaponCheck(int WeaponCode); //DefaultInventoryClasses 블루프린트에서 설정한 총 액터(ATestGun)들을 순서대로인 Code 번호를 통해 읽어와 정확히 Actor 를 불러온다. 
 
 	UFUNCTION(BlueprintCallable)
@@ -56,7 +59,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetGunPose(bool isGunPose);//총알이 없는데 총을 들고 있을경우를 위해, bool GunPose 와 연동
-
+	
 private:
 	void MoveForward(float Axis); //캐릭터 앞뒤 이동
 	void MoveRight(float Axis);//좌우 이동
@@ -77,7 +80,7 @@ private:
 
 	int NextHold=1;
 	bool FirstHold=true;
-	
+
 	UPROPERTY(EditAnywhere)
 	bool isPlayer=false;//플레이어 일경우 시작 시에 총 없이 존재하기 위한 bool 설정
 
@@ -110,7 +113,7 @@ int SniperAmmo=20;//사용자가 가지고 있는 SR 총알수
 UPROPERTY(EditAnywhere)
 int TotalAmmo=50;//AR 총알이든 SR 총알이든 사용하기전에 TotalAmmo 로 옮겨서 사용
 
-UPROPERTY(VisibleAnywhere)
+UPROPERTY(EditAnywhere)
 int currentAmmo=20;//현재 탄창의 총알 AI 가 5발쏘고 마는 이유
 
 UPROPERTY(VisibleAnywhere)

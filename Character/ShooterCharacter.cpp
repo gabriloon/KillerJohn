@@ -71,6 +71,7 @@ if(IsDead()){//캐릭터가 죽었을 경우
 	AKillerJohnGameModeBase* GameMode=GetWorld()->GetAuthGameMode<AKillerJohnGameModeBase>();
 		if(GameMode!=nullptr){
 		GameMode->PawnKilled(this);//EmGameModeBase cpp 의 PawnKilled 함수 호출
+		this->GetMesh()->SetCollisionEnabled(ECollisionEnabled::NoCollision);//죽인 캐릭터 Collision 제거
 	}
 	DetachFromControllerPendingDestroy();//컨트롤러에서 Pawn을 분리
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);//죽었으니까,캐릭터의 CapsuleCollision 제거
@@ -87,6 +88,11 @@ bool AShooterCharacter::IsDead() const
 float AShooterCharacter::GetHealthPercent() const //Widget_Hud 에서 현재 HP 퍼센트를 위해 사용
 {
 	return Health/MaxHealth;
+}
+
+void AShooterCharacter::AddCurrentBullet() 
+{
+	TotalAmmo+=10;
 }
 
 void AShooterCharacter::WeaponCheck(int WC) //WC:1-AK 2-M4 3-SR, BP_Gun 쪽에서 총을 입수시에 시작하는 Function
@@ -106,19 +112,19 @@ GunSlot2();//2번칸에 총 휙득
 void AShooterCharacter::MoveForward(float Axis) //앞뒤 이동
 {
 	if(GunPose){//총을 쥔 자세인가 아닌가에 따라 속도 변경
-	AddMovementInput(GetActorForwardVector()*Axis);}
+	AddMovementInput(GetActorForwardVector()*Axis/2);}
 	else{
-		AddMovementInput((GetActorForwardVector()*Axis)/2);
+		AddMovementInput((GetActorForwardVector()*Axis)/3);
 	}
 }
 
 void AShooterCharacter::MoveRight(float Axis) //좌우 이동
 {
 	if(GunPose){//총을 쥔 자세인가 아닌가에 따라 속도 변경
-	AddMovementInput(GetActorRightVector()*Axis);
+	AddMovementInput(GetActorRightVector()*Axis/2);
 	}
 	else{
-		AddMovementInput((GetActorRightVector()*Axis)/2);
+		AddMovementInput((GetActorRightVector()*Axis)/3);
 	}
 }
 
